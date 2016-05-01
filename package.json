@@ -1,0 +1,32 @@
+{
+  "name": "react-native-stylesheet-xg",
+  "version": "1.0.0",
+  "description": "extension stylesheet for cross platforms and responsive",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xgfe/react-native-stylesheet-xg.git"
+  },
+  "keywords": [
+    "react-native",
+    "stylesheet"
+  ],
+  "author": "xgfe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xgfe/react-native-stylesheet-xg/issues"
+  },
+  "homepage": "https://github.com/xgfe/react-native-stylesheet-xg#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^1.1.6"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
