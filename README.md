@@ -1,5 +1,5 @@
 # react-native-stylesheet-xg
-stylesheet for responsive size
+extension stylesheet for cross platforms and responsive
 
 ## Example
 Check [index.js](https://github.com/xgfe/react-native-stylesheet-xg/blob/master/example/index.android.js) in the Example folder.
