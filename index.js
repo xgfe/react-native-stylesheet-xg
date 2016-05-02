@@ -11,6 +11,7 @@ const DEFAULT_WIDTH = 320;
 const CStyleSheet = {
   baseWidth: DEFAULT_WIDTH,
   ratio: width / DEFAULT_WIDTH,
+  isROn: true,
   setBase: function (baseWidth = DEFAULT_WIDTH) {
     this.baseWidth = baseWidth;
     this.ratio = width / baseWidth;
@@ -67,12 +68,20 @@ const CStyleSheet = {
     return styleObj;
   },
 
+  switchR: function(isROn) {
+    var prevStatus = this.isROn;
+    
+    this.isROn = !!isROn;
+
+    return prevStatus;
+  },
+
   r: function(num) {
-    if (Math.abs(num) <= 1) {
-      return num;
+    if (this.isROn && Math.abs(num) > 1) {
+      return Math.round(num * this.ratio);
     }
 
-    return Math.round(num * this.ratio);
+    return num;
   }
 };
 

@@ -92,3 +92,4 @@ StyleSheet.r(100); // 113 (width: 360, base: 320)
 | setBase | width:number | set the target width according to the UI |
 | create | style:object | replace native StyleSheet creating stylesheet  |
 | r | num:number | the inner function to get the responsive size according to the device with and base |
+| switchR | isRon:boolean | set the flag to switch the responsive size function, which return the prev value |
