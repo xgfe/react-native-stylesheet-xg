@@ -1,6 +1,6 @@
 {
   "name": "react-native-stylesheet-xg",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "extension stylesheet for cross platforms and responsive",
   "main": "index.js",
   "scripts": {

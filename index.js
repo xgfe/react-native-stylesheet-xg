@@ -16,8 +16,6 @@ const CStyleSheet = {
     this.ratio = width / baseWidth;
   },
   create: function (styleObj) {
-
-    //console.log(styleObj);
     return StyleSheet.create(this.revise(styleObj));
   },
 
@@ -36,7 +34,6 @@ const CStyleSheet = {
               if (typeof styleObj[styleKey][key][platformKey] === 'number' && platformKey !== 'flex' && platformKey !== 'opacity') {
                 // ignore rules with '$' start
                 if (platformKey.charAt(0) === '$') {
-                  console.log(platformKey, ':', styleObj[styleKey][key][platformKey]);
                   styleObj[styleKey][platformKey.substr(1)] = styleObj[styleKey][key][platformKey];
                   continue;
                 }
@@ -57,12 +54,10 @@ const CStyleSheet = {
         if (typeof styleObj[styleKey][key] === 'number' && key !== 'flex' && key !== 'opacity') {
           // ignore rules with '$' start
           if (key.charAt(0) === '$') {
-            console.log(key, ':', styleObj[styleKey][key]);
             styleObj[styleKey][key.substr(1)] = styleObj[styleKey][key];
             delete styleObj[styleKey][key];
             continue;
           } else {
-            console.log(key, ':', styleObj[styleKey][key]);
             styleObj[styleKey][key] = this.r(styleObj[styleKey][key]);
           }
         }
@@ -81,5 +76,4 @@ const CStyleSheet = {
   }
 };
 
-//console.log(CStyleSheet);
 export default CStyleSheet;
