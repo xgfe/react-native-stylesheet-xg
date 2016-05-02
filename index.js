@@ -73,7 +73,7 @@ const CStyleSheet = {
   },
 
   r: function(num) {
-    if (num <= 1) {
+    if (Math.abs(num) <= 1) {
       return num;
     }
 
