@@ -9,12 +9,31 @@ const {width} = Dimensions.get('window');
 const DEFAULT_WIDTH = 320;
 
 const CStyleSheet = {
+  minWidth: undefined,
+  maxWidth: undefined,
   baseWidth: DEFAULT_WIDTH,
   ratio: width / DEFAULT_WIDTH,
   isROn: true,
   setBase: function (baseWidth = DEFAULT_WIDTH) {
     this.baseWidth = baseWidth;
-    this.ratio = width / baseWidth;
+    this.updateRatio();
+  },
+  setMinWidth: function (minWidth) {
+    this.minWidth = minWidth;
+    this.updateRatio();
+  },
+  setMaxWidth: function (maxWidth) {
+    this.maxWidth = maxWidth;
+    this.updateRatio();
+  },
+  updateRatio: function () {
+    if (width < this.minWidth) {
+      this.ratio = this.minWidth / this.baseWidth;
+    } else if (width > this.maxWidth) {
+      this.ratio = this.maxWidth / this.baseWidth;
+    } else {
+      this.ratio = width / this.baseWidth;
+    }
   },
   create: function (styleObj) {
     return StyleSheet.create(this.revise(styleObj));
@@ -70,7 +89,7 @@ const CStyleSheet = {
 
   switchR: function(isROn) {
     var prevStatus = this.isROn;
-    
+
     this.isROn = !!isROn;
 
     return prevStatus;
