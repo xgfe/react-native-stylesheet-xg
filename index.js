@@ -104,4 +104,7 @@ const CStyleSheet = {
   }
 };
 
-export default CStyleSheet;
+//可能丢失StyleSheet原型上的属性，不过StyleSheet原型上没有特殊属性
+const newStyleSheet = Object.assign({}, StyleSheet, CStyleSheet);
+
+export default newStyleSheet;
